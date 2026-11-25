@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrderCreated",
+  "type": "object",
+  "required": ["eventType", "orderId", "userId", "itemId", "qty", "ts"],
+  "additionalProperties": false,
+  "properties": {
+    "eventType": {"const": "OrderCreated"},
+    "orderId": {"type": "string", "minLength": 1},
+    "userId": {"type": "integer", "minimum": 1},
+    "itemId": {"type": "integer", "minimum": 1},
+    "qty": {"type": "integer", "minimum": 1},
+    "ts": {"type": "string", "format": "date-time"}
+  }
+}
